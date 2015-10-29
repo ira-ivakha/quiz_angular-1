@@ -1,0 +1,16 @@
+<div class="" >
+
+  <form  ng-controller="addQuizCtrl">
+    <div data-ng-cloak >
+      <input type="text" placeholder="Enter new Question Header" ng-model="name" name="header" />
+      <input type="text" placeholder="Enter new Question" ng-model="text" name="text" />
+      <input type="text" placeholder="Enter bgcolor" ng-model="bgcolor"/>
+      <input type="text" placeholder="Enter image file name" ng-model="img" name="text" />
+      <input type="number" ng-model="minanswers" placeholder="Enter № of min allowed answers"/>
+      <input type="text" ng-model="answer1" placeholder="Enter Answer 1" />
+      <input type="submit" id="submit" ng-click="submit()" value="Add Question" />
+
+    </div>
+  </form>
+</div>
+

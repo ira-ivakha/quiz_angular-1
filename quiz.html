@@ -1,0 +1,67 @@
+  <div class="quiz-popup" >
+
+    <ul class="quiz-slider">
+      <li ng-repeat="item in quiz" class="container question" ng-init="b = '#' + item.bgcolor" style="background:{{b}};">
+        <div class="image-block">
+          <img ng-src={{item.img}} alt="" class="quiz-image" />
+        </div>
+        <div class="question-block">
+          <ul class="questions-bar">
+            <li ng-repeat="itemnum in quiz" class="done {{$index}}"></li>
+          </ul>
+          <h3 class="question-header">{{item.name}}</h3>
+          <div class="answers-block">
+
+            <!-- </div> -->
+            <div class="answers-list medium-indents">
+                <div ng-if="item.minanswers == 1" class="answer-radio-wrapper" ng-repeat="answer in item.answers">
+                  <input type="radio" name="{{item.name+$index}}" id="{{item.name+$index}}"  value="" />
+                  <label for="{{item.name+$index}}">
+                          <span class="answer-header">
+                            {{answer}}
+                          </span>
+
+                  </label>
+                </div>
+                <div ng-if="item.minanswers == 0" class="answer-checkbox-wrapper" ng-repeat="answer in item.answers">
+                  <input type="checkbox" name="{{item.name+$index}}" id="{{item.name+$index}}"  value="" />
+                  <label for="{{item.name+$index}}">
+                            <span class="answer-header">
+                              {{answer}}
+                            </span>
+
+                  </label>
+                </div>
+              </div>
+          </div>
+          <div class="quiz-control-buttons">
+            <a href="" class="quiz-button back">Back</a>
+            <a href="" class="quiz-button next">Next step</a>
+          </div>
+          <script type="text/javascript">
+            $('#quizModal').find('a.quiz-button').click(function(e) {
+              alert('fdfdf');
+              e.preventDefault();
+              var indent,
+                  slideWidth = parseInt($('.quiz-slider li').width());
+              if ($(this).hasClass('result')){
+                return;
+              }
+              else {
+
+                if ($(this).hasClass('back')){
+                  indent = parseInt($('.quiz-slider').css('left')) + slideWidth;
+                }
+                else {indent = parseInt($('.quiz-slider').css('left')) - slideWidth;}
+
+              }
+              $( '.quiz-slider' ).css('left', indent);
+              //$( '.quiz-slider' ).animate({left:  indent}, 200, 'easeInOutExpo' );
+            });
+          </script>
+        </div>
+
+      </li>
+    </ul>
+  </div>
+

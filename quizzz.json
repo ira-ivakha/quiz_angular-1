@@ -1,0 +1,19 @@
+{ "quiz":[
+  {
+    "name": "Question1",
+    "img": "img/quiz1.jpg",
+    "text": "Are you ready?",
+    "answers": ["yes","no","just a second"],
+    "minanswers": 0,
+    "bgcolor": "00dd00"
+  },
+  {
+    "name": "Question2",
+    "img": "img/quiz1.jpg",
+    "text": "Are you ready?",
+    "answers": ["yes","no","just a second"],
+    "minanswers": 1,
+    "bgcolor": "0000dd"
+  }
+]
+}
