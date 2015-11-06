@@ -27,9 +27,44 @@ app.controller('quizCtrl',
 
           $scope.quiz=data;
       });
-        console.log($scope.quiz);
-    }
-);
+
+        $scope.back = function(){
+            var indent,
+                activeItem = 0,
+                length = this.quiz.length-1,
+                leftIndent = parseInt($('.quiz-slider').css('left'))*(-1),
+                slideWidth = parseInt($('.quiz-slider li').width());
+            console.log(slideWidth);
+            if (leftIndent>0){
+                indent = parseInt($('.quiz-slider').css('left')) + slideWidth;
+                activeItem=leftIndent/slideWidth ;
+                $( '.quiz-slider' ).css('left', indent);
+            }
+            else {
+                $scope.activeItem=0;
+            }
+            console.log(activeItem);
+            return activeItem;
+        };
+        $scope.next = function(){
+            var indent,
+                activeItem = 0,
+                slideWidth = parseInt($('.quiz-slider li').width()),
+                length = this.quiz.length-1,
+                leftIndent = parseInt($('.quiz-slider').css('left'))*(-1);
+
+            if (leftIndent < length*slideWidth){
+                indent = parseInt($('.quiz-slider').css('left')) - slideWidth;
+                $( '.quiz-slider' ).css('left', indent);
+
+            }
+            activeItem=leftIndent/slideWidth +1;
+            console.log(activeItem);
+            return activeItem;
+        };
+    });
+
+
 
 app.controller('addQuizCtrl', ['$scope','$http', function($scope, $http) {
   $scope.bgcolor = '000000';
