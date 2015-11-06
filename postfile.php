@@ -1,7 +1,8 @@
 <?php
-$answer = json_decode($_POST['message']);
-print $_POST['message'];
+$answer = json_decode($_POST[message]);
+//print $_POST[message];
 //$answer = json_decode(file_get_contents('php://input'), true);
+echo $answer;
 //$answer = json_decode(file_get_contents('quizzz.json'), true);
 /*{
 $fd = fopen("quiz.json", 'w') or die("не удалось создать файл");
@@ -11,11 +12,10 @@ fclose($fd);
 echo json_encode('answer');
 };*/
 //echo json_encode($answer);
-if(isset($answer['quiz']))
+if(isset($answer))
 {
-    $quiz=$answer['quiz'][0];
-    echo json_encode($quiz);
-    $fd = fopen("quizz.json", 'w') or die("не удалось создать файл");
+
+    $fd = fopen("quizzz.json", 'w') or die("не удалось создать файл");
     $str =  json_encode($answer);
     echo $str;
     fwrite($fd, $str);

@@ -23,15 +23,15 @@ var app = angular.module('quizControllers', ['ngRoute'])
 
 app.controller('quizCtrl',
     function loadQuizController($scope, $http){
-      $http.get('quiz.json').success(function(data) {
+      $http.get('quizzz.json').success(function(data) {
 
-          $scope.quiz=data.quiz;
+          $scope.quiz=data;
       });
         console.log($scope.quiz);
     }
 );
 
-app.controller('addQuizCtrl', ['$scope', function($scope) {
+app.controller('addQuizCtrl', ['$scope','$http', function($scope, $http) {
   $scope.bgcolor = '000000';
   $scope.minanswers=1;
   $scope.quiznew = {'name': '', 'img' : '', 'text': '', 'answers': [], 'minanswers' : 1, 'bgcolor': '000000' };
@@ -54,16 +54,23 @@ app.controller('addQuizCtrl', ['$scope', function($scope) {
       $scope.minanswers=1;
       $scope.answers=[];
     }
+      var message = JSON.stringify($scope.quiz);
 
-
-      $scope.save = function (quiz){
-          $http.post("postfile.php", quiz).success(function (answ) {
-              answ=quiz;
-          });
+      $.post('postfile.php', {message:message}, function(data)	{
+          alert('Сервер ответил: '+data);
+      });
+      //console.log('quizparse', JSON.parse($scope.quiz));
+      //$http.post("postfile.php", {message:message}, function(data)	{
+      //    alert('Сервер ответил: '+data)});
+      /*$scope.save = function (quiz){
+          $http.post("postfile.php", $scope.quiz).success(function (answ) {
+              alert('success');
+          }).error()
           console.log(quiz);
-      };
-
+      };*/
   };
+
+
 
 
 }]);

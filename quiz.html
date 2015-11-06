@@ -39,8 +39,7 @@
             <a href="" class="quiz-button next">Next step</a>
           </div>
           <script type="text/javascript">
-            $('#quizModal').find('a.quiz-button').click(function(e) {
-              alert('fdfdf');
+            $('.quiz-popup').find('a.quiz-button').click(function(e) {
               e.preventDefault();
               var indent,
                   slideWidth = parseInt($('.quiz-slider li').width());
@@ -55,7 +54,7 @@
                 else {indent = parseInt($('.quiz-slider').css('left')) - slideWidth;}
 
               }
-              $( '.quiz-slider' ).css('left', indent);
+              $( '.quiz-slider' ).css('margin-left', indent);
               //$( '.quiz-slider' ).animate({left:  indent}, 200, 'easeInOutExpo' );
             });
           </script>
