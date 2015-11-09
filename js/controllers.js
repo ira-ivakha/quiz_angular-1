@@ -14,6 +14,9 @@ var app = angular.module('quizControllers', ['ngRoute'])
           .when('/editquiz', {
             templateUrl: 'editquiz.html'
           })
+          .when('/feedback', {
+              templateUrl: 'feedback.html'
+          })
           .otherwise({
             template: "<h2 class='app-title'>404 - page not found :(</h2>"
           });
@@ -110,7 +113,20 @@ app.controller('addQuizCtrl', ['$scope','$http', function($scope, $http) {
 
 }]);
 
+app.controller('feedbackCtrl',
+    function sendContacts($scope, $http) {
+        if ($scope.name) {
+            $scope.contacts.name = this.name;
+            $scope.contacts.phone = this.phone;
+            $scope.contacts.email = this.email;
 
+            console.log( $scope.contacts);
+            $scope.name="";
+            $scope.phone='';
+            $scope.email='';
+        }
+        var message = JSON.stringify($scope.contacts);
+    });
 /*
 var storeQuiz = function($scope, $http) {
   //$http.post('quizzz.json', JSON.stringify($scope.quiz));

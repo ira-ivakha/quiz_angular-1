@@ -37,7 +37,16 @@
         <h1>When in <span class="chilecross">Rome<span class="chile"> Chile</span></span>...</h1>
         <p>The first travel site that learns what you like to give you personalized travel experiences that you love!</p>
         <p>Experiences curated by locals! Your experiences with the locals!</p>
-        <a class="btn btn-default button_intro" data-toggle="modal" data-target="#quizModal">Take Quiz!</a>
+        <a href="#/quiz" class="btn btn-default button_intro" data-toggle="modal" data-target="#quizModal" >
+          <span>Start Quiz</span>
+        </a>
+        <a href="#/editquiz" class="btn btn-default button_intro" data-toggle="modal" data-target="#quizModal">
+          <span>Edit Quiz</span>
+        </a>
+        <a href="#/feedback" class="btn btn-default button_intro" data-toggle="modal" data-target="#quizModal">
+          <span>Feedback</span>
+        </a>
+
       </div>
 
     </div>
@@ -48,10 +57,11 @@
       <div class="modal-dialog">
         <div class="modal-content" >
           <div class="modal-body">
-            <ng-view>
+            <div class="quiz-popup" >
+              <ng-view>
 
-            </ng-view>
-
+              </ng-view>
+            </div>
           </div>
 
 
