@@ -1,15 +1,18 @@
-<div class="" >
-  <button type="button" class="close quiz-close" data-dismiss="modal" aria-hidden="true">&times;</button>
-  <form  ng-controller="feedbackCtrl">
-    <div data-ng-cloak >
-      <h3>Enter  Your contacts here and we will call You:</h3>
-      <input type="text" placeholder="Name" ng-model="name" class="form-control" name="name" required />
-      <input type="text" placeholder="Phone" ng-model="phone"  class="form-control" name="phone" />
-      <input type="email" placeholder="Email"  class="form-control" ng-model="email" required />
-      <a href="#/" class="btn btn-default" >Back to Main Page</a>
-      <input type="submit" id="submit" ng-click="submit()" value="Save Contacts" class="btn btn-success" />
 
-    </div>
-  </form>
-</div>
+<button type="button" class="close quiz-close" data-dismiss="modal" aria-hidden="true">&times;</button>
+<!--<form  ng-controller="feedbackCtrl" id="feedbackForm">-->
+  <form id="feedbackForm" ng-controller="feedbackCtrl">
+    <h3>Enter  Your contacts h ere and we will call You:</h3>
+    <label for="name" class="label">Enter Your Name</label>
+    <input type="text" id="name" placeholder="Name" ng-model="name" ng-minlength=3 class="form-control" name="name" required />
+    <label for="email">or Email:</label>
+    <input type="email" id="email" placeholder="Email"  class="form-control" ng-model="email" />
+    <label for="message">Enter Your message here:</label>
+    <input type="text" id="message" placeholder="Enter yor message" ng-model="message"  class="form-control" name="message" />
+
+    <a href="#/" class="btn btn-default" >Back to Main Page</a>
+    <input type="submit" id="submit" ng-click="submit()" value="Save Contacts" class="btn btn-success" />
+
+</form>
+
 

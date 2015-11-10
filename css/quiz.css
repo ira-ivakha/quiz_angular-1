@@ -10,9 +10,6 @@ body > header {
     padding:0;
 }
 
-.quiz-popup h3{
-    color: #0000dd;
-}
 .quiz-popup{
     padding:0;
     margin:0;
@@ -286,9 +283,10 @@ body > header {
     width:1194px;
     height:560px;
     margin-top:120px;
-    border-radius:0;
+    border-radius:4px;
     padding: 0 !important;
     border:none;
+
 }
 #quizModal .modal-dialog .image-block{
     width: 580px;
@@ -403,4 +401,8 @@ body > header {
     #quizModal .modal-dialog .image-block{
         display:none !important;
     }
+}
+.modal-dialog .modal-content{
+    background-color: #0000dd;
+    height: 100%;
 }

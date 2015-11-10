@@ -1,8 +1,7 @@
 <div class="" >
   <button type="button" class="close quiz-close" data-dismiss="modal" aria-hidden="true">&times;</button>
   <form  ng-controller="addQuizCtrl">
-    <div data-ng-cloak >
-
+    <h3>Enter New Question Here</h3>
       <input type="text" placeholder="Enter new Question Header" ng-model="name" class="form-control" name="header" />
       <input type="text" placeholder="Enter new Question" ng-model="text"  class="form-control" name="text" />
       <input type="text" placeholder="Enter bgcolor"  class="form-control" ng-model="bgcolor"/>
@@ -11,7 +10,6 @@
       <input type="text" ng-model="answer1" placeholder="Enter Answer 1" class="form-control" />
       <input type="submit" id="submit" ng-click="submit()" value="Add Question" class="btn btn-success" />
 
-    </div>
   </form>
 </div>
 

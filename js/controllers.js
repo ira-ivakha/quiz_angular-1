@@ -94,18 +94,19 @@ app.controller('addQuizCtrl', ['$scope','$http', function($scope, $http) {
     }
       var message = JSON.stringify($scope.quiz);
 
+      $http.post('postfile.php', {message:message}).
+          success(function(data, status, headers, config) {
+              alert('We received your message');
+          }).
+              error(function(data, status, headers, config) {
+                  alert('An Error Occured. Try later!');
+              });
+      /*
+      using jquery:
       $.post('postfile.php', {message:message}, function(data)	{
           alert('Сервер ответил: '+data);
       });
-      //console.log('quizparse', JSON.parse($scope.quiz));
-      //$http.post("postfile.php", {message:message}, function(data)	{
-      //    alert('Сервер ответил: '+data)});
-      /*$scope.save = function (quiz){
-          $http.post("postfile.php", $scope.quiz).success(function (answ) {
-              alert('success');
-          }).error()
-          console.log(quiz);
-      };*/
+      */
   };
 
 
@@ -115,19 +116,40 @@ app.controller('addQuizCtrl', ['$scope','$http', function($scope, $http) {
 
 app.controller('feedbackCtrl',
     function sendContacts($scope, $http) {
-        if ($scope.name) {
+        $scope.submit = function() {
+            $scope.contacts={'name': '', 'email': '', 'mesage' : ''};
+        if ($scope.name && $scope.email) {
             $scope.contacts.name = this.name;
-            $scope.contacts.phone = this.phone;
+            $scope.contacts.message = this.message;
             $scope.contacts.email = this.email;
-
-            console.log( $scope.contacts);
             $scope.name="";
-            $scope.phone='';
+            $scope.message='';
             $scope.email='';
         }
         var message = JSON.stringify($scope.contacts);
+            $http.post('mail.php', message).
+                success(function(data, status, headers, config) {
+                 alert('We received your message');
+                }).
+                error(function(data, status, headers, config) {
+                    alert('An Error Occured. Try later!');
+                });
+
+    }
     });
+
 /*
+ $('#feedbackForm').submit(function(){
+ $ajax({
+ type: "POST",
+ url: "mail.php",
+ data: $this.serialize()
+ }).done(function(){
+ alert('We will connect You!');
+ });
+ });
+
+
 var storeQuiz = function($scope, $http) {
   //$http.post('quizzz.json', JSON.stringify($scope.quiz));
       $http.post("postfile.php", quiz).success(function (answ) {
