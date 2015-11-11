@@ -1,0 +1,37 @@
+body {
+    padding-top:50px;
+    position: relative;
+}
+
+#scroll-container{
+    position: relative;
+}
+.navbar-static{
+    position: fixed;
+    left:0;
+    top: 0;
+    right:0;
+    z-index: 1;
+}
+.img-wrapper{
+    padding: 7px 0;
+}
+.img-wrapper:first-child{
+    padding-top:0;
+}
+.img-wrapper:last-child{
+    padding-bottom:0;
+}
+.gallery-img{
+    width:100%;
+    height: auto;
+    display: block;
+    opacity: 1;
+    -webkit-transition: opacity 3000ms;
+    -moz-transition: opacity 3000ms;
+    -ms-transition: opacity 3000ms;
+    transition: opacity 3000ms;
+}
+.just-added{
+    opacity:0;
+}

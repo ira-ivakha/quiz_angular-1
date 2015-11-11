@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dynamic Scroll</title>
+
+  <!-- Angular Material CSS now available via Google CDN; version 0.11.2 used here -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/scrollstyles.css">
+
+  <!-- Angular Material Dependencies -->
+  <script src="js/lib/jquery.min.js"></script>
+
+  <script src="js/scrollspy.js"></script>
+  <script src="js/scrollscript.js"></script>
+  <script src="js/lib/bootstrap.min.js"></script>
+</head>
+<body data-spy="scroll" data-target="#navbar-example">
+  <nav id="navbar-example2" class="navbar navbar-default navbar-static">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-example-js-navbar-scrollspy">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Dynamic Gallery</a>
+      </div>
+      <div class="collapse navbar-collapse bs-example-js-navbar-scrollspy">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#one">One</a></li>
+          <li class=""><a href="#two">Two</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container" id="scroll-container">
+    <div class="row">
+      <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
+        <h2>Gallery</h2>
+        <div class="gallery-part panel panel-default" id="one">
+          <div class="panel-body">
+            <div class="img-wrapper">
+              <img src="img/01.jpg" alt="" class="gallery-img" />
+            </div>
+            <div class="img-wrapper">
+              <img src="img/01.jpg" alt="" class="gallery-img" />
+            </div>
+            <div class="img-wrapper">
+              <img src="img/01.jpg" alt="" class="gallery-img" />
+            </div>
+          </div>
+
+        </div>
+        <div class="gallery-part panel panel-default" id="two">
+          <div class="panel-body">
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

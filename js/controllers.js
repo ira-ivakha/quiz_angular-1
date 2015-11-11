@@ -29,6 +29,7 @@ app.controller('quizCtrl',
       $http.get('quizzz.json').success(function(data) {
 
           $scope.quiz=data;
+
       });
 
         $scope.back = function(){
